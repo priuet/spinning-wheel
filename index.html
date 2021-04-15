@@ -1,0 +1,44 @@
+<html lang="en">
+	<body>
+		<style>
+			body {
+				text-align: center;
+			}
+			#arrow {
+				margin-left: 660px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 150px 50px 0 50px;
+				border-color: #ff3c00 transparent transparent transparent;
+			}
+			.circle {
+				transition: 5s;
+				transition-timing-function: ease-in-out;
+			}
+		</style>
+		<head>
+			<meta charset="UTF-8">
+			<title>Wheel of Fortune</title>
+		</head>
+
+		<main>
+			<div id="arrow"></div>
+
+			<div id="circle">
+				<img src="img/dc76dAbgi-removebg-preview.png" alt="" style="height: 75vh">
+			</div>
+		</main>
+	</body>
+
+	<script>
+		let sound = new Audio();
+		sound.src = 'img/sound.mp3';
+
+		document.getElementById('circle').addEventListener('click', function(e) {
+			e.target.style.transform = 'rotate('+Math.random()*1000+'rad';
+			sound.play();
+			return false;
+		})
+	</script>
+</html>
